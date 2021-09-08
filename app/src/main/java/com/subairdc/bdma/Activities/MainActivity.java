@@ -1,8 +1,10 @@
-package com.subairdc.bdma;
+package com.subairdc.bdma.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.subairdc.bdma.R;
 
 public class MainActivity extends AppCompatActivity {
 
