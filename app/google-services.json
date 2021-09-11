@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "773008219318",
+    "project_id": "blooddonarmanagement",
+    "storage_bucket": "blooddonarmanagement.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773008219318:android:16730e02f93c9fbdcada17",
+        "android_client_info": {
+          "package_name": "com.subairdc.bdma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773008219318-vc1m2j5hn0v978mbt8r73b75s2b5md5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP3I1BG5A0owlb0xUfuv0AQfrSlIerdF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773008219318-vc1m2j5hn0v978mbt8r73b75s2b5md5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

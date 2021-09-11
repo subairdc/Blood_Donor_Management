@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Blood Donar Management</string>
     <string name="user_registration">User Registration</string>
+    <string name="user_login">User Login</string>
     <string name="full_name">Full Name</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="age">Age</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_id">Email Id</string>
+    <string name="password">Password</string>
+    <string name="conform_password">Conform Password</string>
+    <string name="register_user">Register User</string>
 </resources>
