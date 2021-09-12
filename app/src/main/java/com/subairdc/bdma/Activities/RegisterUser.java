@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
     private TextView bannar, registerUser;
-    private EditText editTextfullName, editTextDOB, editTextAge, editTextPhoneNo, editTextEmail, editTextPassword, editTextConformPassword;
+    private EditText editTextfullName, editTextPhoneNo, editTextEmail, editTextPassword, editTextConformPassword;
 
     private FirebaseAuth mAuth;
 
@@ -43,8 +43,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         registerUser.setOnClickListener(this);
 
         editTextfullName = (EditText) findViewById(R.id.fullName);
-        editTextDOB = (EditText) findViewById(R.id.dob);
-        editTextAge = (EditText) findViewById(R.id.age);
         editTextPhoneNo = (EditText) findViewById(R.id.phoneNo);
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
@@ -66,8 +64,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private void registerUser() {
         String fullName = editTextfullName.getText().toString().trim();
-        String dob = editTextDOB.getText().toString().trim();
-        String age = editTextAge.getText().toString().trim();
         String phoneNo = editTextPhoneNo.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -76,18 +72,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         if(fullName.isEmpty()){
             editTextfullName.setError("Full Name is required");
             editTextfullName.requestFocus();
-            return;
-        }
-
-        if(dob.isEmpty()){
-            editTextDOB.setError("Date Of Birth is required");
-            editTextDOB.requestFocus();
-            return;
-        }
-
-        if(age.isEmpty()){
-            editTextAge.setError("Age is required");
-            editTextAge.requestFocus();
             return;
         }
 
@@ -133,7 +117,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()){
-                            User user = new User(fullName, age, email);
+                            User user = new User(fullName, phoneNo, email);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

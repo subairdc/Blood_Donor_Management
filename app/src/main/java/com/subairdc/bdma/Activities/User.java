@@ -1,15 +1,15 @@
 package com.subairdc.bdma.Activities;
 
 public class User {
-    public String fullname, age, email;
+    public String fullName, phoneNo, email;
 
     public User(){
 
     }
 
-    public User(String fullname, String age, String email) {
-        this.fullname = fullname;
-        this.age = age;
+    public User(String fullName, String phoneNo, String email) {
+        this.fullName = fullName;
+        this.phoneNo = phoneNo;
         this.email = email;
     }
 }
