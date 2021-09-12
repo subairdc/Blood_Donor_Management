@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -20,12 +19,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.subairdc.bdma.R;
 
-import java.util.regex.Pattern;
-
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
     private TextView bannar, registerUser;
-    private EditText editTextfullName, editTextPhoneNo, editTextEmail, editTextPassword, editTextConformPassword;
+    private EditText editTextName, editTextPhoneNo, editTextEmail, editTextPassword, editTextConformPassword;
 
     private FirebaseAuth mAuth;
 
@@ -42,7 +39,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         registerUser = (Button) findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
-        editTextfullName = (EditText) findViewById(R.id.fullName);
+        editTextName = (EditText) findViewById(R.id.name);
         editTextPhoneNo = (EditText) findViewById(R.id.phoneNo);
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
@@ -63,15 +60,15 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     }
 
     private void registerUser() {
-        String fullName = editTextfullName.getText().toString().trim();
+        String name = editTextName.getText().toString().trim();
         String phoneNo = editTextPhoneNo.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         String conformPassword = editTextConformPassword.getText().toString().trim();
 
-        if(fullName.isEmpty()){
-            editTextfullName.setError("Full Name is required");
-            editTextfullName.requestFocus();
+        if(name.isEmpty()){
+            editTextName.setError("Full Name is required");
+            editTextName.requestFocus();
             return;
         }
 
@@ -117,7 +114,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()){
-                            User user = new User(fullName, phoneNo, email);
+                            User user = new User(name, phoneNo, email);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
