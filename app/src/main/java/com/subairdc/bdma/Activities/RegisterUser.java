@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private TextView bannar, registerUser;
     private EditText editTextName, editTextPhoneNo, editTextEmail, editTextPassword, editTextConformPassword;
+    private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
 
@@ -44,6 +46,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
         editTextConformPassword = (EditText) findViewById(R.id.conformPassword);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
     }
 
@@ -137,7 +141,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
-
+            progressBar.setVisibility(View.VISIBLE);
         }
 
     }
