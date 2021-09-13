@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodDonarManagement">
         <activity
+            android:name=".Activities.ProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activities.SplashScreen"
             android:exported="true">
             <intent-filter>
@@ -20,10 +23,10 @@
         </activity>
         <activity
             android:name=".Activities.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Activities.RegisterUser"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
