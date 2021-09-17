@@ -23,7 +23,7 @@ import com.subairdc.bdma.R;
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
     private TextView bannar, registerUser;
-    private EditText editTextName, editTextPhoneNo, editTextEmail, editTextPassword, editTextConformPassword;
+    private EditText editTextName, editTextPhoneNo, editTextEmail, editTextPassword, editTextConfirmPassword;
     private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
@@ -45,7 +45,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         editTextPhoneNo = (EditText) findViewById(R.id.phoneNo);
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
-        editTextConformPassword = (EditText) findViewById(R.id.conformPassword);
+        editTextConfirmPassword = (EditText) findViewById(R.id.confirmPassword);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -68,7 +68,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         String phoneNo = editTextPhoneNo.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        String conformPassword = editTextConformPassword.getText().toString().trim();
+        String confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
         if(name.isEmpty()){
             editTextName.setError("Full Name is required");
@@ -77,6 +77,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         }
 
         if(phoneNo.isEmpty()){
+            editTextPhoneNo.setError("Phone Number is required");
+            editTextPhoneNo.requestFocus();
+            return;
+        }
+
+        if(phoneNo.length() < 10){
             editTextPhoneNo.setError("Phone Number is required");
             editTextPhoneNo.requestFocus();
             return;
@@ -106,11 +112,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-       /* if(password!=conformPassword) {
-            editTextConformPassword.setError("Password Doesn't Match");
-            editTextConformPassword.requestFocus();
+        if(confirmPassword != null && !confirmPassword.equals(password)) {
+            editTextConfirmPassword.setError("Password Doesn't Match");
+            editTextConfirmPassword.requestFocus();
             return;
-        */
+            }
+
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

@@ -11,7 +11,7 @@
         android:id="@+id/bannar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="84dp"
         android:text="@string/app_name"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -95,14 +95,14 @@
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
-        android:id="@+id/conformPassword"
+        android:id="@+id/confirmPassword"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/conform_password"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,13 +117,15 @@
         android:layout_marginStart="144dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="154dp"
+        android:backgroundTint="@color/cardview_dark_background"
         android:text="@string/register_user"
         android:textStyle="bold"
-        android:backgroundTint="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/conformPassword"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
+        app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/teal_200" />
 
     <ProgressBar
@@ -136,6 +138,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toEndOf="@+id/registerUser"
-        app:layout_constraintTop_toBottomOf="@+id/conformPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
