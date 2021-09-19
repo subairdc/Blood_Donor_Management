@@ -41,7 +41,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         registerUser = (Button) findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
-        editTextName = (EditText) findViewById(R.id.name);
+        editTextName = (EditText) findViewById(R.id.nameTitle);
         editTextPhoneNo = (EditText) findViewById(R.id.phoneNo);
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);

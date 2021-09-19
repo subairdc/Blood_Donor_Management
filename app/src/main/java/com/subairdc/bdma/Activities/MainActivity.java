@@ -22,7 +22,7 @@ import com.subairdc.bdma.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView register;
+    private TextView register, forgetPassword;
     private EditText editTextEmail, editTextPassword;
     private Button login;
     private ProgressBar progressBar;
@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        forgetPassword = (TextView) findViewById(R.id.forgetPassword);
+        forgetPassword.setOnClickListener(this);
+
     }
 
     @Override
@@ -57,6 +60,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.login:
                 userLogin();
+                break;
+
+            case R.id.forgetPassword:
+                startActivity(new Intent(this, ForgetPassword.class));
                 break;
 
         }

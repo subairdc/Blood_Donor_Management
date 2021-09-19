@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodDonarManagement">
         <activity
+            android:name=".Activities.ForgetPassword"
+            android:exported="true" />
+        <activity
             android:name=".Activities.ProfileActivity"
             android:exported="true" />
         <activity
