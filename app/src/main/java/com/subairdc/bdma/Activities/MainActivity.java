@@ -51,10 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         forgetPassword = (TextView) findViewById(R.id.forgetPassword);
         forgetPassword.setOnClickListener(this);
 
-        if (user != null) {
-            startActivity(new Intent(this, ProfileActivity.class));
-        }
-
     }
 
     @Override

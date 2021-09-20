@@ -117,7 +117,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             editTextConfirmPassword.requestFocus();
             return;
             }
-
+        progressBar.setVisibility(View.VISIBLE);
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -135,6 +135,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
                                     if (task.isSuccessful()){
                                         Toast.makeText(RegisterUser.this, "User has been registered successfull", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(RegisterUser.this,MainActivity.class));
                                         //Redirect to login layout
                                     }else {
                                         Toast.makeText(RegisterUser.this, "Failed to register! Pls Try Again", Toast.LENGTH_LONG).show();
@@ -148,7 +149,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
-            progressBar.setVisibility(View.VISIBLE);
         }
 
     }
