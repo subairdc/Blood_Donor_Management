@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodDonarManagement">
+
         <activity
             android:name=".Activities.ForgetPassword"
             android:exported="true" />

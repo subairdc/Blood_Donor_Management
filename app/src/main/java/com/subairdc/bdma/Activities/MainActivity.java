@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
@@ -48,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         forgetPassword = (TextView) findViewById(R.id.forgetPassword);
         forgetPassword.setOnClickListener(this);
+
+        if (user != null) {
+            startActivity(new Intent(this, ProfileActivity.class));
+        }
 
     }
 
