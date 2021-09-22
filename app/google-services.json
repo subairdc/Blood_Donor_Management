@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1091936094751",
+    "firebase_url": "https://blood-donor-management-2401-default-rtdb.firebaseio.com",
+    "project_id": "blood-donor-management-2401",
+    "storage_bucket": "blood-donor-management-2401.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091936094751:android:e6f9f5ce88b6916e62232a",
+        "android_client_info": {
+          "package_name": "com.subairdc.bdma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091936094751-eemlfllmdpfqmca2ebs5ndhums1h7o9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYlyFdtu70sHfsKCFC_NUHm2_4mdO_4Vg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091936094751-eemlfllmdpfqmca2ebs5ndhums1h7o9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
