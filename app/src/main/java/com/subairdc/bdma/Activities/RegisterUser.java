@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -136,19 +137,28 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                     if (task.isSuccessful()){
                                         Toast.makeText(RegisterUser.this, "User has been registered successfull", Toast.LENGTH_LONG).show();
                                         startActivity(new Intent(RegisterUser.this,MainActivity.class));
+                                        progressBar.setVisibility(View.INVISIBLE);
                                         //Redirect to login layout
                                     }else {
                                         Toast.makeText(RegisterUser.this, "Failed to register! Pls Try Again", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.INVISIBLE);
                                     }
 
                                 }
                             });
 
-                        }else {
+                        }/*else {
                             Toast.makeText(RegisterUser.this, "Failed to register Pls Try Again", Toast.LENGTH_LONG).show();
-                        }
+                            progressBar.setVisibility(View.INVISIBLE);
+                        }*/
                     }
-                });
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(RegisterUser.this, e.getMessage(),Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.INVISIBLE);
+            }
+        });
         }
 
     }
