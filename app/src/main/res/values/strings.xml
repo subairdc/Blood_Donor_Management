@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Blood Donar Management</string>
+    <string name="app_name">Blood Donor Management</string>
     <string name="user_registration">User Registration</string>
     <string name="user_login">User Login</string>
     <string name="full_name">Full Name</string>

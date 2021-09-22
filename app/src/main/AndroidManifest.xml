@@ -8,16 +8,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BloodDonarManagement">
+        android:theme="@style/Theme.BloodDonorManagement">
 
         <activity
-            android:name=".Activities.ForgetPassword"
+            android:name="com.subairdc.bdma.Activities.ForgetPassword"
             android:exported="true" />
         <activity
-            android:name=".Activities.ProfileActivity"
+            android:name="com.subairdc.bdma.Activities.ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.SplashScreen"
+            android:name="com.subairdc.bdma.Activities.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +26,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.MainActivity"
+            android:name="com.subairdc.bdma.Activities.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.RegisterUser"
+            android:name="com.subairdc.bdma.Activities.RegisterUser"
             android:exported="true" />
     </application>
 
