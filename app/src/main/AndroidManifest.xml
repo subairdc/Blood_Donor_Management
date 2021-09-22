@@ -11,13 +11,16 @@
         android:theme="@style/Theme.BloodDonorManagement">
 
         <activity
-            android:name="com.subairdc.bdma.Activities.ForgetPassword"
+            android:name=".Activities.HomePage"
             android:exported="true" />
         <activity
-            android:name="com.subairdc.bdma.Activities.ProfileActivity"
+            android:name=".Activities.ForgetPassword"
             android:exported="true" />
         <activity
-            android:name="com.subairdc.bdma.Activities.SplashScreen"
+            android:name=".Activities.ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +29,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.subairdc.bdma.Activities.MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.subairdc.bdma.Activities.RegisterUser"
+            android:name=".Activities.RegisterUser"
             android:exported="true" />
     </application>
 
