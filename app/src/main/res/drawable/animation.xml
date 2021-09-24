@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android">
+    <scale
+        android:scaleHeight="@string/bottom_sheet_behavior"
+        android:scaleGravity="center"
+        android:scaleWidth="@string/common_google_play_services_enable_text"/>
+</scale>
