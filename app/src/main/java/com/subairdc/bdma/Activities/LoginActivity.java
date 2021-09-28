@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.subairdc.bdma.MainActivity;
 import com.subairdc.bdma.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -111,7 +112,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     if (user.isEmailVerified()){
                         //redirct to user profile
-                        startActivity(new Intent(LoginActivity.this,HomePage.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         progressBar.setVisibility(View.INVISIBLE);
                     }else{
                         user.sendEmailVerification();
