@@ -70,7 +70,7 @@ public class ForgetPassword extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(ForgetPassword.this, "Check your email to reset your password!",Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.INVISIBLE);
-                    Intent intent = new Intent(ForgetPassword.this, MainActivity.class);
+                    Intent intent = new Intent(ForgetPassword.this, LoginActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);

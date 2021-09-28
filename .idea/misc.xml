@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/drawable/button_login.xml" value="0.2703125" />
+        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/drawable/input_text.xml" value="0.2703125" />
         <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_forget_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_home_page.xml" value="0.25416666666666665" />
@@ -11,13 +13,7 @@
         <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_register_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
-        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
-        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_forget_password.xml" value="0.25416666666666665" />
-        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
-        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_register_user.xml" value="0.25416666666666665" />
-        <entry key="..\:/Documents/Android/Blood Donor Management/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Documents/Android/Blood_Donor_Management/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
       </map>
     </option>
   </component>

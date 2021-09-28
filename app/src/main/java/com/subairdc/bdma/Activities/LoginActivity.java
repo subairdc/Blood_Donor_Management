@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.subairdc.bdma.R;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView register, forgetPassword;
     private EditText editTextEmail, editTextPassword;
@@ -111,24 +111,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     if (user.isEmailVerified()){
                         //redirct to user profile
-                        startActivity(new Intent(MainActivity.this,HomePage.class));
+                        startActivity(new Intent(LoginActivity.this,HomePage.class));
                         progressBar.setVisibility(View.INVISIBLE);
                     }else{
                         user.sendEmailVerification();
                         progressBar.setVisibility(View.INVISIBLE);
-                        Toast.makeText(MainActivity.this, "Check your email to verify your account!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, "Check your email to verify your account!",Toast.LENGTH_LONG).show();
                     }
 
                 }else {
                     progressBar.setVisibility(View.INVISIBLE);
-                    Toast.makeText(MainActivity.this, "Failed to Login! Pls check your details",Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Failed to Login! Pls check your details",Toast.LENGTH_LONG).show();
                 }
 
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MainActivity.this, e.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, e.getMessage(),Toast.LENGTH_LONG).show();
                 progressBar.setVisibility(View.INVISIBLE);
             }
         });

@@ -56,7 +56,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bannar:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
             case R.id.registerUser:
                 registerUser();
@@ -136,7 +136,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
                                     if (task.isSuccessful()){
                                         Toast.makeText(RegisterUser.this, "User has been registered successfull", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(RegisterUser.this,MainActivity.class));
+                                        startActivity(new Intent(RegisterUser.this, LoginActivity.class));
                                         progressBar.setVisibility(View.INVISIBLE);
                                         //Redirect to login layout
                                     }else {
