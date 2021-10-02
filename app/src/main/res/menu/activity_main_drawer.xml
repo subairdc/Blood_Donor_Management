@@ -4,7 +4,7 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
+        <!--<item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
@@ -16,10 +16,22 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
-
+            -->
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_baseline_account_circle_24"
             android:title="Profile" />
+        <item
+            android:id="@+id/nav_bloodBankList"
+            android:icon="@drawable/ic_baseline_location_city_24"
+            android:title="Blood Bank List" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="About" />
+        <item
+            android:id="@+id/nav_contactus"
+            android:icon="@drawable/ic_baseline_contacts_24"
+            android:title="Contact Us" />
     </group>
 </menu>

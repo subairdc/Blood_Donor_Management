@@ -8,6 +8,7 @@ import android.os.Handler;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.subairdc.bdma.MainActivity;
 import com.subairdc.bdma.R;
 
 public class SplashScreen extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 if (user != null) {
-                    startActivity(new Intent(SplashScreen.this, HomePage.class));
+                    startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 }else{
                     startActivity(new Intent(SplashScreen.this, LoginActivity.class));
                     finish();

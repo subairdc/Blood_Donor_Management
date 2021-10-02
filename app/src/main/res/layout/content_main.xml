@@ -27,6 +27,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:background="?android:attr/windowBackground"
-        app:menu="@menu/activity_main_drawer"/>
+        app:menu="@menu/activity_bottom_drawer"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

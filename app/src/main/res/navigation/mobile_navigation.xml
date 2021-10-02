@@ -27,4 +27,19 @@
         android:name="com.subairdc.bdma.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_bloodBankList"
+        android:name="com.subairdc.bdma.ui.bloodbanklist.BloodBankListFragment"
+        android:label="Blood Bank List"
+        tools:layout="@layout/fragment_blood_bank_list" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.subairdc.bdma.ui.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_contactus"
+        android:name="com.subairdc.bdma.ui.contactus.ContactusFragment"
+        android:label="Contact us"
+        tools:layout="@layout/fragment_contactus" />
 </navigation>
