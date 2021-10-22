@@ -42,4 +42,9 @@
         android:name="com.subairdc.bdma.ui.contactus.ContactusFragment"
         android:label="Contact us"
         tools:layout="@layout/fragment_contactus" />
+    <fragment
+        android:id="@+id/nav_findDonor"
+        android:name="com.subairdc.bdma.ui.finddonor.FindDonorFragment"
+        android:label="Find Donor"
+        tools:layout="@layout/fragment_find_donor" />
 </navigation>
