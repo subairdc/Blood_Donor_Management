@@ -19,11 +19,11 @@
             -->
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:icon="@drawable/ic_user"
             android:title="Profile" />
         <item
             android:id="@+id/nav_bloodBankList"
-            android:icon="@drawable/ic_baseline_location_city_24"
+            android:icon="@drawable/hospital"
             android:title="Blood Bank List" />
         <item
             android:id="@+id/nav_about"

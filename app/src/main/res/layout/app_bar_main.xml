@@ -7,16 +7,10 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.BloodDonorManagement.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.BloodDonorManagement.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -24,11 +18,24 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="80dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_marginRight="10sp"
+        android:clickable="true"
+        app:layout_anchorGravity="start|top"
+        app:srcCompat="@drawable/menu"
+        android:scaleType="center"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:visibility="visible"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="top|center"
+        app:popupTheme="@style/Theme.BloodDonorManagement.PopupOverlay" />/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
