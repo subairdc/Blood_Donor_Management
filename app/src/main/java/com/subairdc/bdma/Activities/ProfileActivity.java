@@ -35,20 +35,20 @@ public class ProfileActivity extends AppCompatActivity {
 
         logout = (Button) findViewById(R.id.logout);
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-        });
+            logout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+            });
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
+            user = FirebaseAuth.getInstance().getCurrentUser();
+            reference = FirebaseDatabase.getInstance().getReference("Users");
+            userID = user.getUid();
 
         final TextView greetingTextView = (TextView) findViewById(R.id.greeting);
         final TextView nameTextView = (TextView) findViewById(R.id.name);
