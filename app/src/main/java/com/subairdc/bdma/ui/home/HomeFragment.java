@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
+        /*homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
@@ -35,7 +35,17 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        return root;*/
+
+        binding = FragmentHomeBinding.inflate(getLayoutInflater());
+        View root = binding.getRoot();
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        //binding.textHome.setText("View binding from home");
     }
 
     @Override
