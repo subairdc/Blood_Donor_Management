@@ -9,11 +9,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.subairdc.bdma.R;
 import com.subairdc.bdma.databinding.FragmentHomeBinding;
+import com.subairdc.bdma.ui.profile.ProfileFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -40,6 +43,14 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
+
+        binding.aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new ProfileFragment());
+            }
+        });
+
         return root;
     }
 
@@ -53,5 +64,13 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment,fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }
