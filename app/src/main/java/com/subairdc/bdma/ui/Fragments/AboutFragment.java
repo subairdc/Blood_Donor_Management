@@ -1,4 +1,4 @@
-package com.subairdc.bdma.ui.finddonor;
+package com.subairdc.bdma.ui.Fragments;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.subairdc.bdma.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FindDonorFragment#newInstance} factory method to
+ * Use the {@link AboutFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FindDonorFragment extends Fragment {
+public class AboutFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class FindDonorFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FindDonorFragment() {
+    public AboutFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class FindDonorFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FindDonorFragment.
+     * @return A new instance of fragment AboutFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FindDonorFragment newInstance(String param1, String param2) {
-        FindDonorFragment fragment = new FindDonorFragment();
+    public static AboutFragment newInstance(String param1, String param2) {
+        AboutFragment fragment = new AboutFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class FindDonorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_find_donor, container, false);
+        return inflater.inflate(R.layout.fragment_about, container, false);
     }
 }

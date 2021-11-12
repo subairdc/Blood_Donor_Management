@@ -1,4 +1,4 @@
-package com.subairdc.bdma.ui.profile;
+package com.subairdc.bdma.ui.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -24,27 +24,27 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.subairdc.bdma.ui.profile.ProfileFragment"
+        android:name="com.subairdc.bdma.ui.Fragments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/nav_bloodBankList"
-        android:name="com.subairdc.bdma.ui.bloodbanklist.BloodBankListFragment"
+        android:name="com.subairdc.bdma.ui.Fragments.BloodBankListFragment"
         android:label="Blood Bank List"
         tools:layout="@layout/fragment_blood_bank_list" />
     <fragment
         android:id="@+id/nav_about"
-        android:name="com.subairdc.bdma.ui.about.AboutFragment"
+        android:name="com.subairdc.bdma.ui.Fragments.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/nav_contactus"
-        android:name="com.subairdc.bdma.ui.contactus.ContactusFragment"
+        android:name="com.subairdc.bdma.ui.Fragments.ContactusFragment"
         android:label="Contact us"
         tools:layout="@layout/fragment_contactus" />
     <fragment
         android:id="@+id/nav_findDonor"
-        android:name="com.subairdc.bdma.ui.finddonor.FindDonorFragment"
+        android:name="com.subairdc.bdma.ui.Fragments.FindDonorFragment"
         android:label="Find Donor"
         tools:layout="@layout/fragment_find_donor" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.subairdc.bdma.ui.bloodbanklist;
+package com.subairdc.bdma.ui.Fragments;
 
 import android.os.Bundle;
 
