@@ -44,12 +44,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
 
-        binding.aboutus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new ProfileFragment());
-            }
-        });
+
 
         return root;
     }
@@ -57,6 +52,12 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new ProfileFragment());
+            }
+        });
         //binding.textHome.setText("View binding from home");
     }
 
@@ -67,9 +68,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment,fragment);
+        //FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_content_main,fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

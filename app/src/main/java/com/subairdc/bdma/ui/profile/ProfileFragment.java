@@ -39,6 +39,8 @@ public class ProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = FragmentProfileBinding.inflate(getLayoutInflater());
+        View root = binding.getRoot();
+
         return;
 
             }
@@ -91,6 +93,6 @@ public class ProfileFragment extends Fragment {
         });
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return root;
     }
 }
