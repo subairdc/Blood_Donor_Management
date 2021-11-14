@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.subairdc.bdma.R;
 import com.subairdc.bdma.databinding.FragmentHomeBinding;
+import com.subairdc.bdma.ui.Fragments.AddDonorFragment;
 import com.subairdc.bdma.ui.Fragments.ProfileFragment;
 
 public class HomeFragment extends Fragment {
@@ -22,25 +23,9 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        /*homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;*/
 
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
-
-
 
         return root;
     }
@@ -48,13 +33,20 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.addDonor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new AddDonorFragment());
+            }
+        });
+
         binding.aboutus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 replaceFragment(new ProfileFragment());
             }
         });
-        //binding.textHome.setText("View binding from home");
     }
 
     @Override
