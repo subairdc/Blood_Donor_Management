@@ -32,37 +32,37 @@
 
     </group>
 
-    <group android:checkableBehavior="single">
         <item android:title="Options">
             <menu>
-                <item
-                    android:id="@+id/nav_addDonor"
-                    android:icon="@drawable/ic_baseline_contacts_24"
-                    android:title="Add Donor" />
-                <item
-                    android:id="@+id/nav_updateDonor"
-                    android:icon="@drawable/ic_baseline_contacts_24"
-                    android:title="Update donor" />
-                <item
-                    android:id="@+id/nav_donorList"
-                    android:icon="@drawable/ic_baseline_contacts_24"
-                    android:title="Donor List" />
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_addDonor"
+                        android:icon="@drawable/ic_baseline_contacts_24"
+                        android:title="Add Donor" />
+                    <item
+                        android:id="@+id/nav_updateDonor"
+                        android:icon="@drawable/ic_baseline_contacts_24"
+                        android:title="Update donor" />
+                    <item
+                        android:id="@+id/nav_donorList"
+                        android:icon="@drawable/ic_baseline_contacts_24"
+                        android:title="Donor List" />
+                </group>
             </menu>
         </item>
-    </group>
 
-    <group android:checkableBehavior="single">
         <item android:title="Communicate">
             <menu>
-                <item
-                    android:id="@+id/nav_about"
-                    android:icon="@drawable/ic_baseline_info_24"
-                    android:title="About" />
-                <item
-                    android:id="@+id/nav_contactus"
-                    android:icon="@drawable/ic_baseline_contacts_24"
-                    android:title="Contact Us" />
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_about"
+                        android:icon="@drawable/ic_baseline_info_24"
+                        android:title="About" />
+                    <item
+                        android:id="@+id/nav_contactus"
+                        android:icon="@drawable/ic_baseline_contacts_24"
+                        android:title="Contact Us" />
+                </group>
             </menu>
         </item>
-    </group>
 </menu>
