@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         });*/
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
+        //hide or show menu item
+        Menu menu =navigationView.getMenu();
+        menu.findItem(R.id.nav_findDonor).setVisible(false);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
