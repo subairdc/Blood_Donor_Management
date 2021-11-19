@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     DatePickerDialog.OnDateSetListener setListener;
 
     ActivityRegisterUserBinding binding;
+    RadioButton radioButton;
+    String gender;
 
 
     private FirebaseAuth mAuth;
@@ -69,7 +72,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        binding.dob.setOnClickListener(new View.OnClickListener() {
+        binding.ivdob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -100,7 +103,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private void registerUser() {
         String name = binding.name.getText().toString().trim();
-        String gender = binding.gender.toString().trim();
+        int id = binding.rgGender.getCheckedRadioButtonId();
         String dob = binding.dob.getText().toString().trim();
         String phoneNo = binding.phoneNo.getText().toString().trim();
         String email = binding.email.getText().toString().trim();
@@ -111,16 +114,23 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             binding.name.setError("Full Name is required");
             binding.name.requestFocus();
             return;
-        }else if (name.length()>=15){
+        }else if (name.length()>=20){
             binding.name.setError("Name length is only 15 ");
             binding.name.requestFocus();
             return;
         }
+        switch (id){
+            case R.id.rbMale:
+                gender = "Male";
+                break;
 
-        if(gender.isEmpty()){
-            //binding.gender.setError("Gender is required");
-            binding.gender.requestFocus();
-            return;
+            case R.id.rbFemale:
+                gender = "Female";
+                break;
+
+            case R.id.rbOther:
+                gender = "Other";
+                break;
         }
 
         if(dob.isEmpty()){
@@ -178,8 +188,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()){
-                            User user = new User(name, phoneNo, email);
-
+                            User user = new User(name, gender, dob, phoneNo, email, password);
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -212,5 +221,4 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             }
         });
         }
-
-    }
+}
