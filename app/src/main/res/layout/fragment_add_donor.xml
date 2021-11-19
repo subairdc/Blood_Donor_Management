@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="20sp"
+    android:padding="12sp"
+    android:layout_marginRight="10sp"
+    android:layout_marginLeft="10sp"
     tools:context=".ui.Fragments.AddDonorFragment">
 
     <TextView
@@ -32,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full Name"
-            app:counterEnabled="true"
+            app:counterEnabled="false"
             app:counterMaxLength="15"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -190,6 +192,8 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="#FBFAFA"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="15sp"
         android:background="@drawable/button_login"
         />
 
