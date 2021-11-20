@@ -31,9 +31,9 @@ import java.util.Calendar;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView bannar, registerUser;
+    /*private TextView bannar, registerUser;
     private EditText editTextName, editTextPhoneNo, editTextEmail, editTextPassword, editTextConfirmPassword;
-    private ProgressBar progressBar;
+    private ProgressBar progressBar;*/
     DatePickerDialog.OnDateSetListener setListener;
 
     ActivityRegisterUserBinding binding;
@@ -53,19 +53,20 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         mAuth = FirebaseAuth.getInstance();
 
-        //bannar = (TextView) findViewById(R.id.bannar);
         binding.bannar.setOnClickListener(this);
-
-        //registerUser = (Button) findViewById(R.id.registerUser);
         binding.registerUser.setOnClickListener(this);
 
-        //editTextName = (EditText) findViewById(R.id.nameTitle);
+
+        /*bannar = (TextView) findViewById(R.id.bannar);
+        registerUser = (Button) findViewById(R.id.registerUser);
+
+        editTextName = (EditText) findViewById(R.id.nameTitle);
         editTextPhoneNo = (EditText) findViewById(R.id.phoneNo);
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
         editTextConfirmPassword = (EditText) findViewById(R.id.confirmPassword);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);*/
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -180,7 +181,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             binding.confirmPassword.requestFocus();
             return;
             }
-        progressBar.setVisibility(View.VISIBLE);
+        binding.progressBar.setVisibility(View.VISIBLE);
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -198,11 +199,11 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                     if (task.isSuccessful()){
                                         Toast.makeText(RegisterUser.this, "User has been registered successfull", Toast.LENGTH_LONG).show();
                                         startActivity(new Intent(RegisterUser.this, LoginActivity.class));
-                                        progressBar.setVisibility(View.INVISIBLE);
+                                        binding.progressBar.setVisibility(View.INVISIBLE);
                                         //Redirect to login layout
                                     }else {
                                         Toast.makeText(RegisterUser.this, "Failed to register! Pls Try Again", Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.INVISIBLE);
+                                        binding.progressBar.setVisibility(View.INVISIBLE);
                                     }
 
                                 }
@@ -217,7 +218,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(RegisterUser.this, e.getMessage(),Toast.LENGTH_LONG).show();
-                progressBar.setVisibility(View.INVISIBLE);
+                binding.progressBar.setVisibility(View.INVISIBLE);
             }
         });
         }
