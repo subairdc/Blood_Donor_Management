@@ -37,7 +37,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     DatePickerDialog.OnDateSetListener setListener;
 
     ActivityRegisterUserBinding binding;
-    RadioButton radioButton;
+    //RadioButton radioButton;
     String gender;
 
 
@@ -88,6 +88,26 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 datePickerDialog.show();
             }
         });
+
+        binding.dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(RegisterUser.this , android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        setListener,year,month,day);
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                datePickerDialog.show();
+            }
+        });
+
+        setListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month+1;
+                String date = day+"/"+month+"/"+year;
+                binding.dob.setText(date);
+            }
+        };
+
     }
 
     @Override
