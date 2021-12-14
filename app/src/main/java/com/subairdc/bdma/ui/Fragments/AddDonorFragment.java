@@ -10,6 +10,7 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import com.subairdc.bdma.MainActivity;
 import com.subairdc.bdma.R;
@@ -40,10 +41,6 @@ public class AddDonorFragment extends Fragment {
         binding = FragmentAddDonorBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-
-
-
-
         // Inflate the layout for this fragment
         return view;
     }
@@ -53,7 +50,7 @@ public class AddDonorFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
-        /*Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -62,17 +59,25 @@ public class AddDonorFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        month = month+1;
-                        String date = day+"/"+month+"/"+year;
-                        binding.dob.setText(date);
-                    }
-                },year,month,day);
+                        getContext(), android.R.style.Theme_DeviceDefault_Dialog,setListener,year,month,day);
                 datePickerDialog.show();
             }
-        });*/
+        });
+
+        setListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month+1;
+                String date = day+"/"+month+"/"+year;
+                binding.dob.setText(date);
+            }
+        };
+
+        String[] listitems =getResources().getStringArray(R.array.bloodgrp);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,listitems);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        binding.bloodgrpselect.setAdapter(arrayAdapter);
+
 
         binding.addDonor.setOnClickListener(new View.OnClickListener() {
             @Override

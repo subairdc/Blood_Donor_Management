@@ -136,11 +136,11 @@
                 android:id="@+id/dob"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLength="10"
                 android:layout_marginTop="45sp"
                 android:layout_toRightOf="@+id/tvdob"
                 android:hint="DD/MM/YYYY"
                 android:inputType="date"
+                android:maxLength="10"
                 android:textAlignment="center"
                 android:textSize="16sp" />
 
@@ -168,20 +168,21 @@
             android:id="@+id/bloodGrp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Blood Group"
             app:hintTextColor="@color/black"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidthFocused="2sp"
+            android:hint="Select Blood Group"
             app:startIconDrawable="@drawable/ic_baseline_calendar_today_24"
             app:startIconTint="@color/black"
-            app:endIconMode="clear_text"
             app:endIconTint="@color/black"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/bloodgrpselect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
+                android:inputType="none"
+                android:layout_weight="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
