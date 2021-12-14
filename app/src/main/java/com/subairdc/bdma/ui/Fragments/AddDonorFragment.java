@@ -73,10 +73,34 @@ public class AddDonorFragment extends Fragment {
             }
         };
 
-        String[] listitems =getResources().getStringArray(R.array.bloodgrp);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,listitems);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        binding.bloodgrpselect.setAdapter(arrayAdapter);
+
+        binding.lastDonate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        getContext(), android.R.style.Theme_DeviceDefault_Dialog,setListener,year,month,day);
+                datePickerDialog.show();
+            }
+        });
+
+        setListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month+1;
+                String date = day+"/"+month+"/"+year;
+                binding.lastDonate.setText(date);
+            }
+        };
+
+        String[] bloodgrplistitems =getResources().getStringArray(R.array.bloodgrp);
+        ArrayAdapter bloodgrparrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,bloodgrplistitems);
+        bloodgrparrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        binding.bloodgrpselect.setAdapter(bloodgrparrayAdapter);
+
+        String[] districtlistitems = getResources().getStringArray(R.array.district);
+        ArrayAdapter districtarrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,districtlistitems);
+        districtarrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        binding.district.setAdapter(districtarrayAdapter);
 
 
         binding.addDonor.setOnClickListener(new View.OnClickListener() {

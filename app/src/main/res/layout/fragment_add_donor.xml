@@ -127,8 +127,8 @@
                 android:layout_marginTop="50sp"
                 android:layout_marginBottom="10sp"
                 android:layout_toRightOf="@+id/ivcal"
-                android:padding="5dp"
                 android:inputType="date"
+                android:padding="5dp"
                 android:text="Date of Birth"
                 android:textSize="18sp" />
 
@@ -136,10 +136,11 @@
                 android:id="@+id/dob"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="-7dp"
                 android:layout_marginTop="45sp"
                 android:layout_toRightOf="@+id/tvdob"
                 android:hint="DD/MM/YYYY"
-                android:inputType="date"
+                android:inputType="none"
                 android:maxLength="10"
                 android:textAlignment="center"
                 android:textSize="16sp" />
@@ -172,7 +173,7 @@
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidthFocused="2sp"
             android:hint="Select Blood Group"
-            app:startIconDrawable="@drawable/ic_baseline_calendar_today_24"
+            app:startIconDrawable="@drawable/ic_baseline_bloodtype_24"
             app:startIconTint="@color/black"
             app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -207,6 +208,7 @@
                 android:inputType="number"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -228,7 +230,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+       <!-- <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -240,13 +242,20 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="City"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:startIconDrawable="@drawable/ic_baseline_place_24"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -257,16 +266,23 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/district"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="District"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            android:hint="Select District"
+            app:startIconDrawable="@drawable/ic_baseline_place_24"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/district"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
+                android:inputType="none"
+                android:layout_weight="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -275,23 +291,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Pincode"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:startIconDrawable="@drawable/ic_baseline_place_24"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:maxLength="6"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="State"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:startIconDrawable="@drawable/ic_baseline_place_24"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"/>
@@ -308,21 +338,29 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
+                android:inputType="number"
+                android:maxLength="2"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ladtDonate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Last Donated Date"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_baseline_date_range_24"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lastDonate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
+                android:inputType="none"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
