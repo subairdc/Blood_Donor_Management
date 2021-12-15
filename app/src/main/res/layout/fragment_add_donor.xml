@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.Fragments.AddDonorFragment">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -165,6 +167,16 @@
                 android:textAllCaps="true" />
         </RelativeLayout>
 
+        <!--<TextView
+            android:id="@+id/blood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Blood Group"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+            android:background="@android:drawable/editbox_background"/>-->
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/bloodGrp"
             android:layout_width="match_parent"
@@ -178,10 +190,11 @@
             app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            <AutoCompleteTextView
                 android:id="@+id/bloodgrpselect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Select Blood Group"
                 android:inputType="none"
                 android:layout_weight="1" />
 
@@ -245,7 +258,6 @@
         </com.google.android.material.textfield.TextInputLayout>-->
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="City"
@@ -259,6 +271,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"/>
@@ -287,7 +300,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/pincode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Pincode"
@@ -301,6 +313,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pincode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -329,13 +342,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/noofdonate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="How many time Blood Donated"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/noofdonate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -389,5 +402,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.208"/>
     </LinearLayout>
-
 </ScrollView>
+</LinearLayout>

@@ -1,17 +1,28 @@
 package com.subairdc.bdma.ui.Fragments;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.subairdc.bdma.MainActivity;
 import com.subairdc.bdma.R;
 import com.subairdc.bdma.databinding.FragmentAddDonorBinding;
@@ -26,7 +37,10 @@ public class AddDonorFragment extends Fragment {
     FragmentAddDonorBinding binding;
 
     String gender;
+    Dialog dialog;
     DatePickerDialog.OnDateSetListener setListener;
+
+    private FirebaseAuth mAuth;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +52,7 @@ public class AddDonorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         binding = FragmentAddDonorBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
@@ -111,12 +126,18 @@ public class AddDonorFragment extends Fragment {
                 String dob = binding.dob.getText().toString().trim();
                 String phoneNo = binding.phoneNo.getText().toString().trim();
                 String email = binding.email.getText().toString().trim();
+                String city = binding.city.getText().toString().trim();
+                String district = binding.district.getText().toString().trim();
+                int pincode = binding.pincode.getInputType();
+                String state = binding.state.getText().toString().trim();
+                int noofdonate = binding.noofdonate.getInputType();
+                int lastDonatedDate = binding.lastDonate.getInputType();
 
                 if (name.isEmpty()) {
                     binding.name.setError("Full Name is required");
                     binding.name.requestFocus();
                     return;
-                } else if (name.length() >= 20) {
+                } else if (name.length() >= 20 || name.length()<=4) {
                     binding.name.setError("Name length is only 15 ");
                     binding.name.requestFocus();
                     return;
@@ -147,11 +168,6 @@ public class AddDonorFragment extends Fragment {
                     return;
                 }
 
-                if (phoneNo.length() < 10) {
-                    binding.phoneNo.setError("Please provide valid Phone Number");
-                    binding.phoneNo.requestFocus();
-                    return;
-                }
 
                 if (email.isEmpty()) {
                     binding.email.setError("email is required");
@@ -165,9 +181,20 @@ public class AddDonorFragment extends Fragment {
                     return;
                 }
 
+                if (city.isEmpty()){
+                    binding.city.setError("city is required");
+                    binding.city.requestFocus();
+                    return;
+                }else{
+                    binding.district.setText("Tirunelveli");
+                    binding.state.setText("Tamil Nadu");
+                }
+
                 binding.progressBar.setVisibility(View.VISIBLE);
             }
 
             });
+
+
     }
 }
