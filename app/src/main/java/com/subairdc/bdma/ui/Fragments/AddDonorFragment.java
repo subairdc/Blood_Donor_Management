@@ -21,8 +21,13 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.subairdc.bdma.Activities.Donors;
+import com.subairdc.bdma.Activities.RegisterUser;
 import com.subairdc.bdma.MainActivity;
 import com.subairdc.bdma.R;
 import com.subairdc.bdma.databinding.FragmentAddDonorBinding;
@@ -35,12 +40,14 @@ import java.util.Calendar;
 public class AddDonorFragment extends Fragment {
 
     FragmentAddDonorBinding binding;
-
     String gender;
     Dialog dialog;
-    DatePickerDialog.OnDateSetListener setListener;
+    DatePickerDialog.OnDateSetListener dobsetListener;
+    DatePickerDialog.OnDateSetListener datesetListener;
 
-    private FirebaseAuth mAuth;
+    private FirebaseDatabase rootNode;
+    private DatabaseReference reference;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,16 +77,16 @@ public class AddDonorFragment extends Fragment {
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        binding.ivdob.setOnClickListener(new View.OnClickListener() {
+        binding.dob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        getContext(), android.R.style.Theme_DeviceDefault_Dialog,setListener,year,month,day);
+                        getContext(), android.R.style.Theme_DeviceDefault_Dialog,dobsetListener,year,month,day);
                 datePickerDialog.show();
             }
         });
 
-        setListener = new DatePickerDialog.OnDateSetListener() {
+        dobsetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month+1;
@@ -93,12 +100,12 @@ public class AddDonorFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        getContext(), android.R.style.Theme_DeviceDefault_Dialog,setListener,year,month,day);
+                        getContext(), android.R.style.Theme_DeviceDefault_Dialog,datesetListener,year,month,day);
                 datePickerDialog.show();
             }
         });
 
-        setListener = new DatePickerDialog.OnDateSetListener() {
+        datesetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month+1;
@@ -124,14 +131,15 @@ public class AddDonorFragment extends Fragment {
                 String name = binding.name.getText().toString().trim();
                 int id = binding.rgGender.getCheckedRadioButtonId();
                 String dob = binding.dob.getText().toString().trim();
+                String bloodGrp = binding.bloodgrpselect.getText().toString().trim();
                 String phoneNo = binding.phoneNo.getText().toString().trim();
                 String email = binding.email.getText().toString().trim();
                 String city = binding.city.getText().toString().trim();
                 String district = binding.district.getText().toString().trim();
-                int pincode = binding.pincode.getInputType();
+                String pincode = binding.pincode.getText().toString().trim();
                 String state = binding.state.getText().toString().trim();
-                int noofdonate = binding.noofdonate.getInputType();
-                int lastDonatedDate = binding.lastDonate.getInputType();
+                String noofdonate = binding.noofdonate.getText().toString().trim();
+                String lastDonatedDate = binding.lastDonate.getText().toString().trim();
 
                 if (name.isEmpty()) {
                     binding.name.setError("Full Name is required");
@@ -161,13 +169,21 @@ public class AddDonorFragment extends Fragment {
                     binding.dob.requestFocus();
                     return;
                 }
+                if (bloodGrp.isEmpty()) {
+                    binding.bloodgrpselect.setError("Date of Birth is required");
+                    binding.bloodgrpselect.requestFocus();
+                    return;
+                }
 
                 if (phoneNo.isEmpty()) {
                     binding.phoneNo.setError("Phone Number is required");
                     binding.phoneNo.requestFocus();
                     return;
+                }else if(!Patterns.PHONE.matcher(phoneNo).matches() || phoneNo.length()<10){
+                    binding.phoneNo.setError(" Valid Phone Number is required");
+                    binding.phoneNo.requestFocus();
+                    return;
                 }
-
 
                 if (email.isEmpty()) {
                     binding.email.setError("email is required");
@@ -189,8 +205,15 @@ public class AddDonorFragment extends Fragment {
                     binding.district.setText("Tirunelveli");
                     binding.state.setText("Tamil Nadu");
                 }
-
                 binding.progressBar.setVisibility(View.VISIBLE);
+
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("Donors");
+
+                //get all the values already done
+
+                Donors donors = new Donors(name, gender, dob, bloodGrp, phoneNo, email, city, district, pincode, state, noofdonate, lastDonatedDate);
+                reference.setValue(donors);
             }
 
             });

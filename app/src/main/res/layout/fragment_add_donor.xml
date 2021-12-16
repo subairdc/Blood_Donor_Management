@@ -141,8 +141,9 @@
                 android:layout_marginLeft="-7dp"
                 android:layout_marginTop="45sp"
                 android:layout_toRightOf="@+id/tvdob"
+                android:focusable="false"
                 android:hint="DD/MM/YYYY"
-                android:inputType="none"
+                android:inputType="date"
                 android:maxLength="10"
                 android:textAlignment="center"
                 android:textSize="16sp" />
@@ -153,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="55sp"
                 android:layout_toRightOf="@+id/dob"
-                android:src="@drawable/ic_baseline_date_range_24" />
+                android:src="@drawable/ic_baseline_cake_24" />
 
             <TextView
                 android:id="@+id/age"
@@ -194,8 +195,8 @@
                 android:id="@+id/bloodgrpselect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select Blood Group"
                 android:inputType="none"
+                android:editable="false"
                 android:layout_weight="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -274,7 +275,7 @@
                 android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
+                android:inputType="textAutoComplete"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -285,7 +286,7 @@
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidthFocused="2sp"
             android:hint="Select District"
-            app:startIconDrawable="@drawable/ic_baseline_place_24"
+            app:startIconDrawable="@drawable/ic_baseline_map_24"
             app:startIconTint="@color/black"
             app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -295,6 +296,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
+                android:editable="false"
                 android:layout_weight="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -328,7 +330,7 @@
             app:hintTextColor="@color/black"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidthFocused="2sp"
-            app:startIconDrawable="@drawable/ic_baseline_place_24"
+            app:startIconDrawable="@drawable/ic_baseline_map_24"
             app:startIconTint="@color/black"
             app:endIconMode="clear_text"
             app:endIconTint="@color/black"
@@ -373,7 +375,8 @@
                 android:id="@+id/lastDonate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"/>
+                android:focusable="false"
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
