@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
 
-        //Check the  user already login and email verified
+        //Check the  user already login and email verified (include onStart and onStop)
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
