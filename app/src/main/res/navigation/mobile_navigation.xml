@@ -54,12 +54,12 @@
         tools:layout="@layout/fragment_add_donor" />
     <fragment
         android:id="@+id/nav_updateDonor"
-        android:name="com.subairdc.bdma.nav_updateDonor"
+        android:name="com.subairdc.bdma.ui.Fragments.UpdateDonorFragment"
         android:label="Update Donor"
         tools:layout="@layout/fragment_update_donor" />
     <fragment
         android:id="@+id/nav_donorList"
-        android:name="com.subairdc.bdma.nav_donorList"
+        android:name="com.subairdc.bdma.ui.Fragments.DonorListFragment"
         android:label="Donor List"
         tools:layout="@layout/fragment_donor_list" />
 </navigation>

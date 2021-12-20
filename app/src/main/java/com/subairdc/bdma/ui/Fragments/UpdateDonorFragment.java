@@ -1,4 +1,4 @@
-package com.subairdc.bdma;
+package com.subairdc.bdma.ui.Fragments;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.subairdc.bdma.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link nav_updateDonor#newInstance} factory method to
+ * Use the {@link UpdateDonorFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class nav_updateDonor extends Fragment {
+public class UpdateDonorFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class nav_updateDonor extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public nav_updateDonor() {
+    public UpdateDonorFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class nav_updateDonor extends Fragment {
      * @return A new instance of fragment nav_updateDonor.
      */
     // TODO: Rename and change types and number of parameters
-    public static nav_updateDonor newInstance(String param1, String param2) {
-        nav_updateDonor fragment = new nav_updateDonor();
+    public static UpdateDonorFragment newInstance(String param1, String param2) {
+        UpdateDonorFragment fragment = new UpdateDonorFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
