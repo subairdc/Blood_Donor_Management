@@ -2,6 +2,7 @@ package com.subairdc.bdma.ui.Fragments;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -23,10 +24,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.subairdc.bdma.Activities.Donors;
+import com.subairdc.bdma.Activities.LoginActivity;
 import com.subairdc.bdma.Activities.RegisterUser;
 import com.subairdc.bdma.MainActivity;
 import com.subairdc.bdma.R;
@@ -71,6 +75,9 @@ public class AddDonorFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
+
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("Donors");
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -123,7 +130,6 @@ public class AddDonorFragment extends Fragment {
         ArrayAdapter districtarrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,districtlistitems);
         districtarrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         binding.district.setAdapter(districtarrayAdapter);
-
 
         binding.addDonor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,13 +213,28 @@ public class AddDonorFragment extends Fragment {
                 }
                 binding.progressBar.setVisibility(View.VISIBLE);
 
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("Donors");
+
+
 
                 //get all the values already done
 
                 Donors donors = new Donors(name, gender, dob, bloodGrp, phoneNo, email, city, district, pincode, state, noofdonate, lastDonatedDate);
-                reference.setValue(donors);
+                reference.child(name).setValue(donors).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if (task.isSuccessful()){
+                            Toast.makeText(getContext(), "Add Donor successfully", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getContext(), MainActivity.class));
+                            binding.progressBar.setVisibility(View.INVISIBLE);
+                            //Redirect to login layout
+                        }else {
+                            Toast.makeText(getContext(), "Failed to Add Donor! Pls Try Again", Toast.LENGTH_LONG).show();
+                            binding.progressBar.setVisibility(View.INVISIBLE);
+                        }
+
+                    }
+                });
             }
 
             });
