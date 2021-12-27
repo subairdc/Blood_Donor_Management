@@ -36,6 +36,5 @@
         android:visibility="visible"
         app:layout_anchor="@+id/appBarLayout"
         app:layout_anchorGravity="top|center"
-        app:popupTheme="@style/Theme.BloodDonorManagement.PopupOverlay" />/>
-
+        app:popupTheme="@style/Theme.BloodDonorManagement.PopupOverlay" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

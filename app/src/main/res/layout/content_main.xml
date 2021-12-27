@@ -27,8 +27,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:foreground="?attr/selectableItemBackground"
-        android:background="?android:attr/windowBackground"
-        app:elevation="10dp"
+        android:background="@drawable/rounded_corner"
+        app:elevation="3dp"
+        android:layout_margin="20sp"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="selected"
         app:menu="@menu/activity_bottom_drawer"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

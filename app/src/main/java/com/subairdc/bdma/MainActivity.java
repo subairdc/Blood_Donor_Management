@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -57,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottom_nav_view = findViewById(R.id.bottom_nav_view);
         NavigationUI.setupWithNavController(bottom_nav_view, navController);
+
+       /* CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottom_nav_view.getLayoutParams();
+        layoutParams.setBehavior(new ScrollHandler());*/
 
     }
 
