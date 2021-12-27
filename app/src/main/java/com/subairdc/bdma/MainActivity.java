@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        BottomNavigationView bottom_nav_view = findViewById(R.id.bottom_nav_view);
-        NavigationUI.setupWithNavController(bottom_nav_view, navController);
+        /*BottomNavigationView bottom_nav_view = findViewById(R.id.bottom_nav_view);
+        NavigationUI.setupWithNavController(bottom_nav_view, navController);*/
 
        /* CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottom_nav_view.getLayoutParams();
         layoutParams.setBehavior(new ScrollHandler());*/
