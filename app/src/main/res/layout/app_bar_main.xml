@@ -28,6 +28,22 @@
         app:layout_anchorGravity="start|top"
         app:srcCompat="@drawable/menu" />-->
 
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
+
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/rounded_corner"
+        android:foreground="?attr/selectableItemBackground"
+        android:isScrollContainer="true"
+        app:elevation="3dp"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="selected"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        app:menu="@menu/activity_bottom_drawer" />
+-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

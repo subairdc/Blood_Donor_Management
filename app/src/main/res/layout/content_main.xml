@@ -18,8 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation" />
 
-<!--
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
 
         android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
@@ -27,6 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
         android:foreground="?attr/selectableItemBackground"
         android:background="@drawable/rounded_corner"
         app:elevation="3dp"
@@ -35,5 +35,4 @@
         app:labelVisibilityMode="selected"
         app:menu="@menu/activity_bottom_drawer"/>
 -->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,12 @@
 package com.subairdc.bdma.Activities;
 
 public class Donors {
+    public Donors() {
+    }
 
     String name,gender,dob,bloodGrp,phoneNo,email,city,district,pincode,state,noofdonate,lastDonoateDate;
 
-    public Donors(String name, String gender, String dob, String bldGrp, String phoneNo, String email, String city, String district, String pincode, String state, String noofdonate, String lastDonoateDate) {
+    public Donors(String name, String gender, String dob, String bloodGrp, String phoneNo, String email, String city, String district, String pincode, String state, String noofdonate, String lastDonoateDate) {
         this.name = name;
         this.gender = gender;
         this.dob = dob;
@@ -31,6 +33,14 @@ public class Donors {
         return gender;
     }
 
+    public String getBloodGrp() {
+        return bloodGrp;
+    }
+
+    public void setBloodGrp(String bloodGrp) {
+        this.bloodGrp = bloodGrp;
+    }
+
     public void setGender(String gender) {
         this.gender = gender;
     }
@@ -43,13 +53,7 @@ public class Donors {
         this.dob = dob;
     }
 
-    public String getBooldGrp() {
-        return bloodGrp;
-    }
 
-    public void setBooldGrp(String bldGrp) {
-        this.bloodGrp = bloodGrp;
-    }
 
     public String getPhoneNo() {
         return phoneNo;

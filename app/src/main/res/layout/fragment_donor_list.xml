@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Fragments.DonorListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="656dp"
+        android:layout_marginTop="75sp" />
 
-</FrameLayout>
+    <!--<TextView
+        android:id="@+id/tvfindDonor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:layout_marginLeft="20sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Search Donor" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvfindDonor"
+        android:layout_alignStart="@id/tvfindDonor"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="5sp"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/search_layout"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10sp"
+        android:textColor="#999999"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:queryHint="Sreach Donor..." />
+
+    <ImageButton
+        android:id="@+id/searchbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/searchView"
+        android:layout_alignBottom="@id/searchView"
+        android:layout_marginLeft="5sp"
+
+        android:layout_marginRight="-67dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/rounded_corner"
+        android:padding="15sp"
+        android:src="@drawable/ic_baseline_search_24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/donorlistRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="535dp"
+        android:layout_alignBottom="@id/searchView"
+        android:layout_marginBottom="-553dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+-->
+</RelativeLayout>
