@@ -6,11 +6,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Fragments.DonorListFragment">
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:queryHint="Search Donor"
+        app:iconifiedByDefault="false"
+        android:background="@drawable/search_layout"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10sp"
+        android:textColor="#999999"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="65sp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="656dp"
-        android:layout_marginTop="75sp" />
+        android:layout_below="@+id/searchView"
+        android:layout_marginTop="10sp" />
 
     <!--<TextView
         android:id="@+id/tvfindDonor"

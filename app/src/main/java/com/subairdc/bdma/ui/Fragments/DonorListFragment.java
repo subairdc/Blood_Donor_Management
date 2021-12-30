@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.telephony.ims.ImsMmTelManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class DonorListFragment extends Fragment {
     DatabaseReference reference;
     MyAdapter myAdapter;
     RecyclerView recyclerView;
+    SearchView searchView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,25 @@ public class DonorListFragment extends Fragment {
         myAdapter = new MyAdapter(options);
         recyclerView.setAdapter(myAdapter);
 
+        //Search View
+
+        searchView = (SearchView)view.findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                textSearch(query);
+                return false;
+            }
+        });
+
+
         return view;
     }
 
@@ -75,5 +96,15 @@ public class DonorListFragment extends Fragment {
     public void onStop() {
         super.onStop();
         myAdapter.stopListening();
+    }
+
+    private void textSearch(String str){
+        FirebaseRecyclerOptions<Donors> options =
+                new FirebaseRecyclerOptions.Builder<Donors>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Donors").orderByChild("name").startAt(str.toUpperCase()).endAt(str.toLowerCase()+"~"), Donors.class)
+                        .build();
+        myAdapter =new MyAdapter(options);
+        myAdapter.startListening();
+        recyclerView.setAdapter(myAdapter);
     }
 }
