@@ -101,7 +101,7 @@ public class DonorListFragment extends Fragment {
     private void textSearch(String str){
         FirebaseRecyclerOptions<Donors> options =
                 new FirebaseRecyclerOptions.Builder<Donors>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Donors").orderByChild("name").startAt(str.toUpperCase()).endAt(str.toLowerCase()+"~"), Donors.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Donors").orderByChild("name").startAt(str).endAt(str+"~"), Donors.class)//Case sensitive
                         .build();
         myAdapter =new MyAdapter(options);
         myAdapter.startListening();
