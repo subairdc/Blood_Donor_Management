@@ -43,7 +43,7 @@ public class ProfileFragment extends Fragment {
 
         return;
 
-            }
+    }
 
 
     @Override
@@ -77,11 +77,12 @@ public class ProfileFragment extends Fragment {
                     String name = userprofile.name;
                     String email = userprofile.email;
                     String phoneNo = userprofile.phoneNo;
+                    String dob = userprofile.dob;
 
-                    binding.greeting.setText("Welcome, "+name+"!");
                     binding.name.setText(name);
                     binding.email.setText(email);
                     binding.phoneNo.setText(phoneNo);
+                    binding.dob.setText(dob);
 
                 }
             }

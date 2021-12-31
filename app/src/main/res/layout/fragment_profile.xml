@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:orientation="vertical"
     tools:context=".ui.Fragments.ProfileFragment">
 
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
         android:padding="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -21,107 +22,141 @@
 
         <ImageView
             android:id="@+id/profile"
-            android:layout_width="100sp"
-            android:layout_height="100sp"
-            android:layout_centerVertical="true"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:src="@drawable/app_logo1" />
 
         <TextView
             android:id="@+id/appname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10sp"
+            android:layout_marginTop="10sp"
             android:layout_toRightOf="@+id/profile"
             android:text="@string/app_name"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvuserprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appname"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@+id/profile"
+            android:text="User Profile"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/greeting"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="23dp"
-        android:layout_below="@id/relativeLayout2"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
-
-    <TextView
-        android:id="@+id/emailAddressTitle"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Email Address:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/greeting" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailAddressTitle" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:layout_marginBottom="15dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:startIconDrawable="@drawable/ic_baseline_person_24"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black"
+             >
 
-    <TextView
-        android:id="@+id/nameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Name:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/name"
+                android:drawableLeft="@drawable/ic_user"
+                android:drawablePadding="10dp"
+                android:text="Full Name"
+                android:editable="false"
+                />
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="253dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTitle" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date of Birth"
+            android:layout_marginBottom="15dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:startIconDrawable="@drawable/ic_baseline_date_range_24"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black"
+            >
 
-    <TextView
-        android:id="@+id/phoneNoTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="311dp"
-        android:text="Phone No:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/dob"
+                android:drawableLeft="@drawable/ic_user"
+                android:drawablePadding="10dp"
+                android:text="Date of Birth"
+                android:editable="false"
+                />
 
-    <TextView
-        android:id="@+id/phoneNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="253dp"
-        app:layout_constraintBottom_toTopOf="@+id/logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNoTitle"
-        app:layout_constraintVertical_bias="0.013" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mobile"
+            android:layout_marginBottom="15dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/phoneNo"
+                android:drawableLeft="@drawable/ic_baseline_phone_24"
+                android:drawablePadding="10dp"
+                android:text="Mobile"
+                android:editable="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:layout_marginBottom="15dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:startIconDrawable="@drawable/ic_baseline_person_24"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/email"
+                android:drawableLeft="@drawable/ic_user"
+                android:drawablePadding="10dp"
+                android:text="Email"
+                android:editable="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/logout"
@@ -131,9 +166,6 @@
         android:background="@drawable/button_login"
         android:padding="10sp"
         android:text="Logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNoTitle" />
+        android:layout_gravity="center"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
