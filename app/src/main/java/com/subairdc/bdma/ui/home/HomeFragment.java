@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.subairdc.bdma.R;
 import com.subairdc.bdma.databinding.FragmentHomeBinding;
 import com.subairdc.bdma.ui.Fragments.AddDonorFragment;
+import com.subairdc.bdma.ui.Fragments.DonorListFragment;
+import com.subairdc.bdma.ui.Fragments.FindDonorFragment;
 import com.subairdc.bdma.ui.Fragments.ProfileFragment;
 
 public class HomeFragment extends Fragment {
@@ -38,6 +40,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 replaceFragment(new AddDonorFragment());
+            }
+        });
+
+        binding.donarList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new DonorListFragment());
             }
         });
 
