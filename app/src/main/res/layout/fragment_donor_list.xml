@@ -14,7 +14,7 @@
         app:iconifiedByDefault="false"
         android:background="@drawable/search_layout"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textCapWords"
         android:padding="10sp"
         android:textColor="#999999"
         android:layout_marginRight="10sp"
