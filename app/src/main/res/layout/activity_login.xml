@@ -68,7 +68,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="6 Digits Pin"
                 android:layout_marginTop="10sp"
                 app:hintTextColor="@color/black"
                 app:boxStrokeColor="@color/black"
@@ -83,7 +83,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/password"
-                    android:inputType="textPassword"/>
+                    android:maxLength="6"
+                    android:inputType="numberPassword"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
