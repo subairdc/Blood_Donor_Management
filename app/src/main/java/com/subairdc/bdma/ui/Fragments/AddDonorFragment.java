@@ -89,6 +89,7 @@ public class AddDonorFragment extends Fragment {
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
                         getContext(), android.R.style.Theme_DeviceDefault_Dialog,dobsetListener,year,month,day);
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()); // - 568025136000L
                 datePickerDialog.show();
             }
         });
@@ -108,6 +109,7 @@ public class AddDonorFragment extends Fragment {
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
                         getContext(), android.R.style.Theme_DeviceDefault_Dialog,datesetListener,year,month,day);
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()); // - 568025136000L
                 datePickerDialog.show();
             }
         });

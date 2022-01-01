@@ -142,6 +142,7 @@
                 android:layout_marginTop="45sp"
                 android:layout_toRightOf="@+id/tvdob"
                 android:hint="DD/MM/YYYY"
+                android:focusable="false"
                 android:inputType="date"
                 android:maxLength="10"
                 android:textAlignment="center"
