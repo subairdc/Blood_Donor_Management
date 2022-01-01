@@ -42,6 +42,12 @@ public class HomeFragment extends Fragment {
                 replaceFragment(new AddDonorFragment());
             }
         });
+        binding.findDonor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new FindDonorFragment());
+            }
+        });
 
         binding.donarList.setOnClickListener(new View.OnClickListener() {
             @Override
