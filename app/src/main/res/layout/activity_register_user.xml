@@ -155,6 +155,7 @@
                     android:layout_marginTop="45sp"
                     android:layout_toRightOf="@+id/tvdob"
                     android:hint="Select Date"
+                    android:focusable="false"
                     android:inputType="date"
                     android:textAlignment="center"
                     android:textSize="18sp" />

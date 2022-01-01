@@ -95,6 +95,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 DatePickerDialog datePickerDialog = new DatePickerDialog(RegisterUser.this , android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         setListener,year,month,day);
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()); // - 568025136000L
                 datePickerDialog.show();
             }
         });
