@@ -160,23 +160,13 @@
                 android:id="@+id/age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_marginLeft="5sp"
                 android:layout_marginTop="57sp"
                 android:layout_toRightOf="@+id/ivdob"
                 android:text="@string/age"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textStyle="bold" />
         </RelativeLayout>
-
-        <!--<TextView
-            android:id="@+id/blood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Select Blood Group"
-            android:padding="12dp"
-            android:gravity="center_vertical"
-            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
-            android:background="@android:drawable/editbox_background"/>-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/bloodGrp"
@@ -200,6 +190,7 @@
                 android:layout_weight="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -346,21 +337,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="How many time Blood Donated"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/noofdonate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="2"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:hint="Last Donated Date"
             app:hintTextColor="@color/black"
             app:boxStrokeColor="@color/black"
@@ -379,6 +355,44 @@
                 android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/statuss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            android:hint="Status"
+            app:startIconDrawable="@drawable/ic_baseline_access_available"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:editable="false"
+                android:layout_weight="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="How many times Blood Donated"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/noofdonate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="2"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/addDonor"

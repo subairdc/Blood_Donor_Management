@@ -48,6 +48,8 @@ public class FindDonorFragment extends Fragment {
         recyclerView.setAdapter(myAdapter);
 
 
+
+
         return view;
     }
 

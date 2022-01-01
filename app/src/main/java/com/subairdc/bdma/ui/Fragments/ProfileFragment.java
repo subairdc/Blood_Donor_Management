@@ -75,11 +75,13 @@ public class ProfileFragment extends Fragment {
 
                 if (userprofile != null) {
                     String name = userprofile.name;
+                    String gender = userprofile.gender;
                     String email = userprofile.email;
                     String phoneNo = userprofile.phoneNo;
                     String dob = userprofile.dob;
 
                     binding.name.setText(name);
+                    binding.tvGender.setText(gender);
                     binding.email.setText(email);
                     binding.phoneNo.setText(phoneNo);
                     binding.dob.setText(dob);

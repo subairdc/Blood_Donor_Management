@@ -1,12 +1,18 @@
 package com.subairdc.bdma;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -16,6 +22,8 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.subairdc.bdma.Activities.Donor;
 import com.subairdc.bdma.Activities.Donors;
 import com.subairdc.bdma.databinding.DonorlistLayoutBinding;
+import com.subairdc.bdma.ui.Fragments.UpdateDonorFragment;
+import com.subairdc.bdma.ui.Fragments.ViewDonorDetailsFragment;
 
 import java.util.ArrayList;
 
@@ -33,7 +41,18 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donors,MyAdapter.MyViewHo
         holder.bloodGrp.setText(model.getBloodGrp());
         holder.city.setText(model.getCity());
         holder.phoneNo.setText(model.getPhoneNo());
+
+        //navigate to view details fragment
+        holder.bloodGrp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AppCompatActivity activity = (AppCompatActivity)view.getContext();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main,new ViewDonorDetailsFragment(model.getName(),model.getGender(),model.getDob(),model.getAge(),model.getBloodGrp(),model.getStatus(),model.getPhoneNo(),model.getEmail(),model.getNoofdonate(),model.getLastDonoateDate(),model.getCity(),model.getDistrict(),model.getPincode(),model.getState())).addToBackStack(null).commit();
+            }
+        });
     }
+
 
     @NonNull
     @Override
@@ -54,6 +73,10 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donors,MyAdapter.MyViewHo
             city = (TextView)itemView.findViewById(R.id.city);
             phoneNo = (TextView)itemView.findViewById(R.id.phoneNo);
         }
+    }
+
+    public interface ItemClickListner{
+        public void onItemCLick();
     }
 }
 

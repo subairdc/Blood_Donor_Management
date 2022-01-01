@@ -85,6 +85,31 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Gender"
+            android:layout_marginBottom="15dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidthFocused="2sp"
+            app:startIconDrawable="@drawable/ic_baseline_person_24"
+            app:startIconTint="@color/black"
+            app:endIconTint="@color/black"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/tvGender"
+                android:drawableLeft="@drawable/ic_user"
+                android:drawablePadding="10dp"
+                android:text="Gender"
+                android:editable="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Date of Birth"
             android:layout_marginBottom="15dp"
             app:hintTextColor="@color/black"
@@ -162,7 +187,7 @@
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/button_login"
         android:padding="10sp"
         android:text="Logout"

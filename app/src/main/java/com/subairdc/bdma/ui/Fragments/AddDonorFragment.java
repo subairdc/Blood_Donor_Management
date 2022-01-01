@@ -5,9 +5,11 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
@@ -38,6 +40,8 @@ import com.subairdc.bdma.databinding.FragmentAddDonorBinding;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 
 
@@ -133,12 +137,19 @@ public class AddDonorFragment extends Fragment {
         districtarrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         binding.district.setAdapter(districtarrayAdapter);
 
+        String[] statuslistitems = getResources().getStringArray(R.array.status);
+        ArrayAdapter statusarrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_dropdown_item_1line,statuslistitems);
+        statusarrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        binding.status.setAdapter(statusarrayAdapter);
+
         binding.addDonor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String name = binding.name.getText().toString().trim();
                 int id = binding.rgGender.getCheckedRadioButtonId();
                 String dob = binding.dob.getText().toString().trim();
+                String age = binding.age.getText().toString().trim();
                 String bloodGrp = binding.bloodgrpselect.getText().toString().trim();
                 String phoneNo = binding.phoneNo.getText().toString().trim();
                 String email = binding.email.getText().toString().trim();
@@ -148,6 +159,7 @@ public class AddDonorFragment extends Fragment {
                 String state = binding.state.getText().toString().trim();
                 String noofdonate = binding.noofdonate.getText().toString().trim();
                 String lastDonatedDate = binding.lastDonate.getText().toString().trim();
+                String status = binding.status.getText().toString().trim();
 
                 if (name.isEmpty()) {
                     binding.name.setError("Full Name is required");
@@ -212,6 +224,19 @@ public class AddDonorFragment extends Fragment {
                 }else{
                     binding.district.setText("Tirunelveli");
                     binding.state.setText("Tamil Nadu");
+                    binding.pincode.setText("627005");
+                }
+
+                if (status.isEmpty()) {
+                    binding.status.setError("Please Select Status");
+                    binding.status.requestFocus();
+                    return;
+                }
+
+                if (lastDonatedDate.isEmpty()) {
+                    binding.lastDonate.setError("Please enter last donated date");
+                    binding.lastDonate.requestFocus();
+                    return;
                 }
                 binding.progressBar.setVisibility(View.VISIBLE);
 
@@ -220,7 +245,7 @@ public class AddDonorFragment extends Fragment {
 
                 //get all the values already done
 
-                Donors donors = new Donors(name, gender, dob, bloodGrp, phoneNo, email, city, district, pincode, state, noofdonate, lastDonatedDate);
+                Donors donors = new Donors(name, gender, dob, bloodGrp, phoneNo, email, city, district, pincode, state, noofdonate, lastDonatedDate, status);
                 reference.child(name).setValue(donors).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

@@ -4,12 +4,13 @@ public class Donors {
     public Donors() {
     }
 
-    String name,gender,dob,bloodGrp,phoneNo,email,city,district,pincode,state,noofdonate,lastDonoateDate;
+    String name,gender,dob,age,bloodGrp,phoneNo,email,city,district,pincode,state,noofdonate,lastDonoateDate,status;
 
-    public Donors(String name, String gender, String dob, String bloodGrp, String phoneNo, String email, String city, String district, String pincode, String state, String noofdonate, String lastDonoateDate) {
+    public Donors(String name, String gender, String dob, String bloodGrp, String phoneNo, String email, String city, String district, String pincode, String state, String noofdonate, String lastDonoateDate, String status) {
         this.name = name;
         this.gender = gender;
         this.dob = dob;
+        this.age = age;
         this.bloodGrp = bloodGrp;
         this.phoneNo = phoneNo;
         this.email = email;
@@ -19,6 +20,23 @@ public class Donors {
         this.state = state;
         this.noofdonate = noofdonate;
         this.lastDonoateDate = lastDonoateDate;
+        this.status = status;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getName() {
@@ -52,8 +70,6 @@ public class Donors {
     public void setDob(String dob) {
         this.dob = dob;
     }
-
-
 
     public String getPhoneNo() {
         return phoneNo;

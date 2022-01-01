@@ -58,6 +58,11 @@
         android:label="Update Donor"
         tools:layout="@layout/fragment_update_donor" />
     <fragment
+        android:id="@+id/nav_view_donor_details"
+        android:name="com.subairdc.bdma.ui.Fragments.ViewDonorDetailsFragment"
+        android:label="View Donors Details"
+        tools:layout="@layout/fragment_view_donor_details" />
+    <fragment
         android:id="@+id/nav_donorList"
         android:name="com.subairdc.bdma.ui.Fragments.DonorListFragment"
         android:label="Donor List"
