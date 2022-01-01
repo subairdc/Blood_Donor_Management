@@ -26,6 +26,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/apositive"
             android:layout_width="36sp"
             android:layout_height="36sp"
             android:layout_marginLeft="20sp"
@@ -33,36 +34,41 @@
             android:background="@drawable/button_blood"
             android:text="A+" />
         <Button
+            android:id="@+id/anegative"
             android:layout_width="36sp"
             android:layout_height="36sp"
-            android:layout_marginLeft="90sp"
+            android:layout_marginLeft="80sp"
             android:layout_marginTop="50sp"
             android:background="@drawable/button_blood"
             android:text="A-" />
         <Button
+            android:id="@+id/bpositive"
             android:layout_width="36sp"
             android:layout_height="36sp"
-            android:layout_marginLeft="160sp"
+            android:layout_marginLeft="140sp"
             android:layout_marginTop="50sp"
             android:background="@drawable/button_blood"
             android:text="B+" />
         <Button
+            android:id="@+id/bnegative"
             android:layout_width="36sp"
             android:layout_height="36sp"
-            android:layout_marginLeft="230sp"
+            android:layout_marginLeft="200sp"
             android:layout_marginTop="50sp"
             android:background="@drawable/button_blood"
             android:text="B-" />
 
         <Button
+            android:id="@+id/abpositive"
             android:layout_width="36sp"
             android:layout_height="36sp"
-            android:layout_marginLeft="290sp"
+            android:layout_marginLeft="260sp"
             android:layout_marginTop="50sp"
             android:background="@drawable/button_blood"
             android:text="AB+" />
 
         <Button
+            android:id="@+id/abnegative"
             android:layout_width="36sp"
             android:layout_height="36sp"
             android:layout_marginLeft="20sp"
@@ -70,19 +76,39 @@
             android:background="@drawable/button_blood"
             android:text="AB-" />
         <Button
+            android:id="@+id/opositive"
             android:layout_width="36sp"
             android:layout_height="36sp"
-            android:layout_marginLeft="90sp"
+            android:layout_marginLeft="80sp"
             android:layout_marginTop="100sp"
             android:background="@drawable/button_blood"
             android:text="O+" />
         <Button
+            android:id="@+id/onegative"
             android:layout_width="36sp"
             android:layout_height="36sp"
-            android:layout_marginLeft="160sp"
+            android:layout_marginLeft="140sp"
             android:layout_marginTop="100sp"
             android:background="@drawable/button_blood"
             android:text="O-" />
+
+        <Button
+            android:id="@+id/others"
+            android:layout_width="49dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="200sp"
+            android:layout_marginTop="100sp"
+            android:background="@drawable/button_blood"
+            android:text="Others"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/all"
+            android:layout_width="36dp"
+            android:layout_height="36sp"
+            android:layout_marginLeft="260sp"
+            android:layout_marginTop="100sp"
+            android:background="@drawable/button_blood"
+            android:text="All" />
 
 
     </androidx.cardview.widget.CardView>

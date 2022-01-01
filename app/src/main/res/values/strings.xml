@@ -27,6 +27,12 @@
         <item>AB-</item>
         <item>O+</item>
         <item>O-</item>
+        <item>A1B+</item>
+        <item>A1B-</item>
+        <item>A2+</item>
+        <item>A2-</item>
+        <item>Bombay</item>
+        <item>INRA</item>
     </string-array>
 
     <string-array name="status">
