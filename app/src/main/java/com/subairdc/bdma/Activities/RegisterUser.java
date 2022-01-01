@@ -85,6 +85,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                         binding.dob.setText(date);
                     }
                 },year,month,day);
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
                 datePickerDialog.show();
             }
         });
