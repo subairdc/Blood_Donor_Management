@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         //hide or show fragents in menu item
         Menu menu =navigationView.getMenu();
-        menu.findItem(R.id.nav_findDonor).setVisible(false);
+        menu.findItem(R.id.nav_updateDonor).setVisible(false);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
