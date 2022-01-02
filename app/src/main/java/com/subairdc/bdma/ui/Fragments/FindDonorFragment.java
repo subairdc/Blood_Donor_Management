@@ -91,6 +91,25 @@ public class FindDonorFragment extends Fragment implements View.OnClickListener 
         myAdapter = new MyAdapter(options);
         recyclerView.setAdapter(myAdapter);
 
+        //Search View
+
+        searchView = (SearchView)view.findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                textSearch(query);
+                return false;
+            }
+        });
+
+
         return view;
     }
 
@@ -104,6 +123,16 @@ public class FindDonorFragment extends Fragment implements View.OnClickListener 
     public void onStop() {
         super.onStop();
         myAdapter.stopListening();
+    }
+
+    private void textSearch(String str){
+        FirebaseRecyclerOptions<Donors> options =
+                new FirebaseRecyclerOptions.Builder<Donors>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Donors").orderByChild("city").startAt(str).endAt(str+"~"), Donors.class)//Case sensitive
+                        .build();
+        myAdapter =new MyAdapter(options);
+        myAdapter.startListening();
+        recyclerView.setAdapter(myAdapter);
     }
 
 
