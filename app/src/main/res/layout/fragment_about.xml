@@ -3,23 +3,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Fragments.AboutFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/text_findDonor"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:text="About"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:gravity="center"
-         />
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:padding="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/applogo"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:src="@drawable/app_logo1" />
+
+
+
+            <TextView
+                android:id="@+id/appname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_toRightOf="@+id/applogo"
+                android:text="@string/app_name"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appname"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="11dp"
+                android:layout_toRightOf="@+id/applogo"
+                android:text="About Us"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:layout_marginBottom="15dp"
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="2sp"
+                app:startIconDrawable="@drawable/ic_baseline_person_24"
+                app:startIconTint="@color/black"
+                app:endIconTint="@color/black"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@id/name"
+                    android:drawableLeft="@drawable/ic_user"
+                    android:drawablePadding="10dp"
+                    android:text="Mohamed Subair"
+                    android:editable="false"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile"
+                android:layout_marginBottom="15dp"
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="2sp"
+                app:startIconDrawable="@drawable/ic_baseline_phone_24"
+                app:startIconTint="@color/black"
+                app:endIconTint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@id/phoneNo"
+                    android:drawableLeft="@drawable/ic_baseline_phone_24"
+                    android:drawablePadding="10dp"
+                    android:text="9042422967"
+                    android:editable="false"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:layout_marginBottom="15dp"
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="2sp"
+                app:startIconDrawable="@drawable/ic_baseline_person_24"
+                app:startIconTint="@color/black"
+                app:endIconTint="@color/black"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@id/email"
+                    android:drawableLeft="@drawable/ic_user"
+                    android:drawablePadding="10dp"
+                    android:text="dmohamedsubair@gmail.com"
+                    android:editable="false"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </FrameLayout>

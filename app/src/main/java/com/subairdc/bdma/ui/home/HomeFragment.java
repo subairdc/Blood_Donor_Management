@@ -17,6 +17,7 @@ import com.subairdc.bdma.ui.Fragments.BloodBankListFragment;
 import com.subairdc.bdma.ui.Fragments.DonorListFragment;
 import com.subairdc.bdma.ui.Fragments.FindDonorFragment;
 import com.subairdc.bdma.ui.Fragments.ProfileFragment;
+import com.subairdc.bdma.ui.Fragments.UpdateDonorFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -50,6 +51,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        binding.updateDonor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new UpdateDonorFragment());
+            }
+        });
+
         binding.BloodBank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +72,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        binding.aboutus.setOnClickListener(new View.OnClickListener() {
+        binding.profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 replaceFragment(new ProfileFragment());
