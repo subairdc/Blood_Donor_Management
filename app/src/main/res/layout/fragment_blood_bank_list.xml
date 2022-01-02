@@ -22,16 +22,17 @@
         app:queryHint="Search here..." />
 
     <ImageButton
+        android:id="@+id/addbloodbankbtn"
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_above="@+id/recyclerView2"
-        android:background="@drawable/button_blood"
-        android:src="@drawable/ic_baseline_person_add_alt_1_24"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="1dp"
         android:layout_toEndOf="@+id/searchView"
         android:layout_toRightOf="@+id/searchView"
+        android:background="@drawable/button_blood"
+        android:src="@drawable/ic_baseline_person_add_alt_1_24"
         android:text="Add" />
 
     <androidx.recyclerview.widget.RecyclerView

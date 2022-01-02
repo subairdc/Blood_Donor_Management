@@ -4,12 +4,15 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +29,7 @@ public class BloodBankListFragment extends Fragment {
     BloodBankAdapter bloodbankAdapter;
     RecyclerView recyclerView;
     SearchView searchView;
+    ImageButton button;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,21 @@ public class BloodBankListFragment extends Fragment {
 
         bloodbankAdapter = new BloodBankAdapter(options);
         recyclerView.setAdapter(bloodbankAdapter);
+
+        button = (ImageButton)view.findViewById(R.id.addbloodbankbtn);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new AddBloodBankFragment();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_main,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+
 
         //Search View
 

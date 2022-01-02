@@ -69,6 +69,7 @@
             app:startIconDrawable="@drawable/ic_baseline_local_hospital_24"
             app:startIconTint="@color/black"
             app:endIconTint="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -76,7 +77,6 @@
                 android:layout_height="wrap_content"
                 android:id="@id/name"
                 android:drawablePadding="10dp"
-                android:text="Blood Bank Name"
                 android:maxLength="30" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -90,7 +90,8 @@
             app:boxStrokeWidthFocused="2sp"
             app:startIconDrawable="@drawable/ic_baseline_phone_24"
             app:startIconTint="@color/black"
-            app:endIconTint="@color/black">
+            app:endIconTint="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -99,8 +100,7 @@
                 android:drawableLeft="@drawable/ic_baseline_phone_24"
                 android:drawablePadding="10dp"
                 android:inputType="number"
-                android:maxLength="10"
-                android:text="Mobile"/>
+                android:maxLength="10"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,6 +115,7 @@
             app:startIconDrawable="@drawable/ic_baseline_place_24"
             app:startIconTint="@color/black"
             app:endIconTint="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -123,8 +124,7 @@
                 android:id="@id/city"
                 android:drawableLeft="@drawable/ic_baseline_location_city_24"
                 android:drawablePadding="10dp"
-                android:inputType="text"
-                android:text="Address" />
+                android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

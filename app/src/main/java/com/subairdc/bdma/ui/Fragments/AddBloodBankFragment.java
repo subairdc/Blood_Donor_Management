@@ -83,6 +83,10 @@ public class AddBloodBankFragment extends Fragment {
                     binding.name.setError("Please Enter Blood Bank Name");
                     binding.name.requestFocus();
                     return;
+                }else if (name.length()<4){
+                    binding.name.setError("Please Enter Blood Bank Full Name");
+                    binding.name.requestFocus();
+                    return;
                 }
                 if (phoneNo.isEmpty()) {
                     binding.phoneNo.setError("Phone Number is required");
@@ -98,7 +102,11 @@ public class AddBloodBankFragment extends Fragment {
                     binding.city.setError("city is required");
                     binding.city.requestFocus();
                     return;
-                }else{
+                }else if (city.length()<4){
+                    binding.city.setError("Enter full city name");
+                    binding.city.requestFocus();
+                    return;
+                }else {
                     binding.district.setText("Tirunelveli");
                 }
                 binding.progressBar.setVisibility(View.VISIBLE);
