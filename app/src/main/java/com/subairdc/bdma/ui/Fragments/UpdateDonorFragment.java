@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +26,7 @@ public class UpdateDonorFragment extends Fragment {
     MyAdapter myAdapter;
     RecyclerView recyclerView;
     SearchView searchView;
+    ImageButton imageButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,19 @@ public class UpdateDonorFragment extends Fragment {
             public boolean onQueryTextChange(String query) {
                 textSearch(query);
                 return false;
+            }
+        });
+
+        imageButton = (ImageButton) view.findViewById(R.id.adddonorbtn);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new AddDonorFragment();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_main,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 

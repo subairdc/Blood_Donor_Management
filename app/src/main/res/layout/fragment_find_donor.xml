@@ -9,7 +9,7 @@
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:queryHint="Search Donor"
+        app:queryHint="Search Donor by city"
         app:iconifiedByDefault="false"
         android:background="@drawable/search_layout"
         android:ems="10"

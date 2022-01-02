@@ -29,7 +29,7 @@ public class BloodBankListFragment extends Fragment {
     BloodBankAdapter bloodbankAdapter;
     RecyclerView recyclerView;
     SearchView searchView;
-    ImageButton button;
+    ImageButton imageButton;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,9 +53,9 @@ public class BloodBankListFragment extends Fragment {
         bloodbankAdapter = new BloodBankAdapter(options);
         recyclerView.setAdapter(bloodbankAdapter);
 
-        button = (ImageButton)view.findViewById(R.id.addbloodbankbtn);
+        imageButton = (ImageButton)view.findViewById(R.id.addbloodbankbtn);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new AddBloodBankFragment();
