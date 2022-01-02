@@ -22,17 +22,13 @@
             android:icon="@drawable/ic_user"
             android:title="Profile" />
         <item
-            android:id="@+id/nav_findDonor"
-            android:icon="@drawable/ic_baseline_search_24"
-            android:title="Find Donor" />
-        <item
             android:id="@+id/nav_bloodBankList"
             android:icon="@drawable/hospital"
             android:title="Blood Bank List" />
         <item
             android:id="@+id/nav_addBloodBankFragment"
             android:icon="@drawable/hospital"
-            android:title="Add Blood Bank List" />
+            android:title="Add Blood Bank" />
 
     </group>
 
@@ -43,6 +39,10 @@
                         android:id="@+id/nav_addDonor"
                         android:icon="@drawable/ic_baseline_contacts_24"
                         android:title="Add Donor" />
+                    <item
+                        android:id="@+id/nav_findDonor"
+                        android:icon="@drawable/ic_baseline_search_24"
+                        android:title="Find Donor" />
                     <item
                         android:id="@+id/nav_updateDonor"
                         android:icon="@drawable/ic_baseline_contacts_24"
