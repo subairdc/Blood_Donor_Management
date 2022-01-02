@@ -26,7 +26,6 @@ import com.subairdc.bdma.Activities.Donor;
 import com.subairdc.bdma.Activities.Donors;
 import com.subairdc.bdma.MyAdapter;
 import com.subairdc.bdma.R;
-import com.subairdc.bdma.databinding.FragmentDonorListBinding;
 
 import java.util.ArrayList;
 import java.util.Locale;

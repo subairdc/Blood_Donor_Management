@@ -99,7 +99,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.721"
+            app:layout_constraintHorizontal_bias="0.688"
             app:layout_constraintStart_toEndOf="@+id/city"
             app:layout_constraintTop_toBottomOf="@+id/bloodGrp"
             app:layout_constraintVertical_bias="0.272" />
