@@ -21,8 +21,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.subairdc.bdma.Activities.Donor;
 import com.subairdc.bdma.Activities.Donors;
-import com.subairdc.bdma.databinding.DonorlistLayoutBinding;
-import com.subairdc.bdma.ui.Fragments.UpdateDonorFragment;
 import com.subairdc.bdma.ui.Fragments.ViewDonorDetailsFragment;
 
 import java.util.ArrayList;
@@ -41,6 +39,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donors,MyAdapter.MyViewHo
         holder.bloodGrp.setText(model.getBloodGrp());
         holder.city.setText(model.getCity());
         holder.phoneNo.setText(model.getPhoneNo());
+        holder.status.setText(model.getStatus());
 
         //navigate to view details fragment
         holder.bloodGrp.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +62,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donors,MyAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name, bloodGrp,city, phoneNo;
+        TextView name, bloodGrp,city, phoneNo,status;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +71,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donors,MyAdapter.MyViewHo
             bloodGrp = (TextView)itemView.findViewById(R.id.bloodGrp);
             city = (TextView)itemView.findViewById(R.id.city);
             phoneNo = (TextView)itemView.findViewById(R.id.phoneNo);
+            status = (TextView) itemView.findViewById(R.id.status);
         }
     }
 
