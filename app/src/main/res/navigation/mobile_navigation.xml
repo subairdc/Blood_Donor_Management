@@ -67,4 +67,9 @@
         android:name="com.subairdc.bdma.ui.Fragments.DonorListFragment"
         android:label="Donor List"
         tools:layout="@layout/fragment_donor_list" />
+    <fragment
+        android:id="@+id/nav_addBloodBankFragment"
+        android:name="com.subairdc.bdma.ui.Fragments.AddBloodBankFragment"
+        android:label="Add Blood Bank"
+        tools:layout="@layout/fragment_add_blood_bank" />
 </navigation>
