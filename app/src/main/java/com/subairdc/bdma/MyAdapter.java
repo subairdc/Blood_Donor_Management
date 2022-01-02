@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,8 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.dynamic.IFragmentWrapper;
 import com.subairdc.bdma.Activities.Donor;
 import com.subairdc.bdma.Activities.Donors;
+import com.subairdc.bdma.ui.Fragments.UpdateDonorFragment;
 import com.subairdc.bdma.ui.Fragments.ViewDonorDetailsFragment;
 
 import java.util.ArrayList;
@@ -46,6 +49,7 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Donors,MyAdapter.MyViewHo
             @Override
             public void onClick(View view) {
 
+                Fragment fragment = new UpdateDonorFragment();
                 AppCompatActivity activity = (AppCompatActivity)view.getContext();
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main,new ViewDonorDetailsFragment(model.getName(),model.getGender(),model.getDob(),model.getAge(),model.getBloodGrp(),model.getStatus(),model.getPhoneNo(),model.getEmail(),model.getNoofdonate(),model.getLastDonoateDate(),model.getCity(),model.getDistrict(),model.getPincode(),model.getState())).addToBackStack(null).commit();
             }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,12 @@ public class ViewDonorDetailsFragment extends Fragment {
         this.state = state;
     }
 
+    public static ViewDonorDetailsFragment newInstance(String ne){
+        ViewDonorDetailsFragment fragment = new ViewDonorDetailsFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,13 +74,27 @@ public class ViewDonorDetailsFragment extends Fragment {
         binding.district.setText(district);
         binding.pincode.setText(pincode);
         binding.state.setText(state);
+
+        binding.tvdonordetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new AddDonorFragment();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_main,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
         return root;
     }
 
-   /* public void onBackPressed(){
 
-        AppCompatActivity activity = (AppCompatActivity).getContext();
+
+   public void onBackPressed(){
+
+        AppCompatActivity activity = (AppCompatActivity)getContext();
         activity.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main,new UpdateDonorFragment()).addToBackStack(null).commit();
-    }*/
+    }
 
 }
