@@ -2,65 +2,96 @@ package com.subairdc.bdma.ui.Fragments;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.subairdc.bdma.Activities.BloodBank;
+import com.subairdc.bdma.Activities.Donors;
+import com.subairdc.bdma.BloodBankAdapter;
+import com.subairdc.bdma.MyAdapter;
 import com.subairdc.bdma.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BloodBankListFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class BloodBankListFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    DatabaseReference reference;
+    BloodBankAdapter bloodbankAdapter;
+    RecyclerView recyclerView;
+    SearchView searchView;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public BloodBankListFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BloodBankListFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static BloodBankListFragment newInstance(String param1, String param2) {
-        BloodBankListFragment fragment = new BloodBankListFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blood_bank_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_blood_bank_list, container, false);
+
+        reference = FirebaseDatabase.getInstance().getReference("Blood Banks");
+        recyclerView = view.findViewById(R.id.recyclerView2);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        FirebaseRecyclerOptions<BloodBank> options =
+                new FirebaseRecyclerOptions.Builder<BloodBank>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Blood Banks"), BloodBank.class)
+                        .build();
+
+        bloodbankAdapter = new BloodBankAdapter(options);
+        recyclerView.setAdapter(bloodbankAdapter);
+
+        //Search View
+
+        searchView = (SearchView)view.findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                textSearch(query);
+                return false;
+            }
+        });
+
+
+        return view;
     }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        bloodbankAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        bloodbankAdapter.stopListening();
+    }
+
+    private void textSearch(String str){
+        FirebaseRecyclerOptions<BloodBank> options =
+                new FirebaseRecyclerOptions.Builder<BloodBank>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Blood Banks").orderByChild("name").startAt(str).endAt(str+"~"), BloodBank.class)//Case sensitive
+                        .build();
+        bloodbankAdapter =new BloodBankAdapter(options);
+        bloodbankAdapter.startListening();
+        recyclerView.setAdapter(bloodbankAdapter);
+    }
+
 }

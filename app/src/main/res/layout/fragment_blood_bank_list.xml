@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Fragments.BloodBankListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/text_findDonor"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:text="Blood Bank"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:gravity="center" />
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="65sp"
+        android:layout_marginRight="10sp"
+        android:background="@drawable/search_layout"
+        android:ems="10"
+        android:inputType="textPersonName|textCapWords"
+        android:padding="10sp"
+        android:textColor="#999999"
+        app:iconifiedByDefault="false"
+        app:queryHint="Search here..." />
 
-</FrameLayout>
+    <ImageButton
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_above="@+id/recyclerView2"
+        android:background="@drawable/button_blood"
+        android:src="@drawable/ic_baseline_person_add_alt_1_24"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toEndOf="@+id/searchView"
+        android:layout_toRightOf="@+id/searchView"
+        android:text="Add" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="match_parent"
+        android:layout_height="656dp"
+        android:layout_below="@+id/searchView"
+        android:layout_marginTop="10sp" />
+
+</RelativeLayout>
